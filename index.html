@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" translate="yes">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do Dex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1 autocapitalize role="banner">Todo-dex</h1>
+        </div>
+        <hr class="top_ln">
+        <div class="tools">
+            <select name="filter" id="filter">
+                <option value="default" selected>FILTER : NONE</option>
+                <option value="done">DONE</option>
+                <option value="not_done">NOT DONE</option>
+            </select>
+            <button class="forget_all">FORGET ALL</button>
+        </div>
+        <div class="list" role="listbox">
+            <div class="fallback">
+                Add a task to start...
+            </div>
+            <div class="task_list"></div>
+        </div>
+        <hr class="bottom_ln">
+        <div class="entry">
+            <form autocomplete autocapitalize name="task_entry" role="form" spellcheck="yes" tabindex="0">
+                <input type="text" id="entry_title" placeholder="What are you going to do?" minlength="5" maxlength="30" required autofocus>
+                <input type="text" id="entry_desc" placeholder="Describe about it yourself.." minlength="5" required autofocus>
+                <label for="add_task"><button>Add Task</button></label>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

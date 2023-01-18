@@ -1,0 +1,257 @@
+@font-face {
+    font-family: Poppins;
+    src: url('fonts/Poppins.ttf');
+}
+@font-face {
+    font-family: Quicksand;
+    src: url('fonts/Quicksand.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid; */
+}
+
+body {
+    font-family: Poppins, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.logo {
+   margin: 20px;
+   text-align: center;
+   font-size: 1.4em;
+   font-family: Quicksand, Arial, Helvetica, sans-serif;
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-image: linear-gradient(45deg,rgb(98, 0, 255) 50%, purple 60%);
+}
+
+.top_ln {
+    width: 5vw;
+    margin: 20px auto;
+    outline: none;
+    border: none;
+    height: 8px;
+    border-radius: 30px;
+    background-color: #bcd;
+}
+
+.tools {
+   width: 50vw;
+   margin: auto;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.tools button, .tools select {
+   flex-grow: 1;
+   margin: 0 5px;
+   border-radius: 10px;
+   border: none;
+   outline: none;
+   padding: 10px;
+   font-weight: 900;
+   font-family: Quicksand, Arial, Helvetica, sans-serif;
+   letter-spacing: 1px;
+   cursor: pointer;
+   background-color: #ddd;
+}
+.tools button:active, .tools select:focus {
+   color: #fff;
+   background-color: #456;
+}
+
+.tools select option {
+   font-size: 1.4em;
+}
+
+ .list {
+    margin: auto;
+ }
+
+ .fallback {
+   margin: 20px auto;
+   border-radius: 5px;
+   padding: 20px;
+   text-align: center;
+   background-color: #eee;
+   width: 50vw;
+ }
+
+ .task {
+    width: 50vw;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, .3);
+    cursor: pointer;
+ }
+ .task * {
+    cursor: pointer;
+ }
+ .task summary {
+    padding: 10px 20px;
+    border-radius: 20px;
+    user-select: none;
+ }
+ .task summary label {
+    float: right;
+    padding: 0 10px 0 0;
+    accent-color: rgb(98, 0, 255);
+ }
+ .task .date {
+   color: #789;
+   font-weight: lighter;
+ }
+ .task p {
+    padding: 10px 20px;
+ }
+ .task summary:hover{
+    color: #fff;
+    background-image: linear-gradient(45deg, rgb(98, 0, 255) 80%, #fff 80%);
+ }
+ .task summary:hover label {
+    color: #000;
+ }
+ .task.done {
+   box-shadow: none;
+   background-color: #eee;
+ }
+.task.done summary {
+   color: #fff;
+   text-decoration: line-through;
+   background: rgb(98, 0, 255);
+ }
+ .task.done summary:hover label {
+   color: #fff;
+}
+
+.selected_task {
+   background: rgb(255, 0, 76);
+}
+.selected_task summary {
+   color: #fff;
+   background: rgb(255, 0, 76) !important;
+}
+.selected_task summary:hover label {
+   color: #fff !important;
+}
+
+ .bottom_ln {
+   width: 5vw;
+   margin: 20px auto 120px auto;
+   outline: none;
+   border: none;
+   height: 8px;
+   border-radius: 30px;
+   background-color: #bcd;
+}
+
+ .entry {
+   position: fixed;
+   left: 0;
+   right: 0;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   backdrop-filter: blur(20px) saturate(50%);
+   box-shadow: 0 -2px 20px 1px rgba(0, 0, 0, .3);
+   animation: slideIn 1s ease forwards;
+ }
+ @keyframes slideIn {
+   from {bottom: -30vh;}
+   to {bottom: 0;}
+ }
+
+ .entry form {
+   width: 80%;
+ }
+
+ .entry input {
+   height: 5vh;
+   width: 40%;
+   border: 2px solid #456;
+   outline: none;
+   border-radius: 30px;
+   padding: 5px 15px;
+   font-size: 1.1em;
+   font-weight: 900;
+   font-family: Quicksand, Arial, Helvetica, sans-serif;
+ }
+ .entry input:focus {
+   border-color: #001;
+ }
+
+ .entry label button {
+   margin-left: 10px;
+   border: none;
+   border-radius: 30px;
+   padding: 10px 20px;
+   font-weight: 900;
+   font-size: 1.05em;
+   font-family: Quicksand, Arial, Helvetica, sans-serif;
+   color: #fff;
+   background-image: linear-gradient(135deg, rgb(98, 0, 255), deepskyblue);
+   cursor: pointer;
+   box-shadow: 0 -2px 5px 1px rgba(0, 0, 0, .4);
+ }
+ .entry label button:active {
+   background: rgb(98, 0, 255);
+   box-shadow: none;
+ }
+
+ @media(max-width: 768px) and (orientation: portrait) {
+   .tools, .task {
+      width: 90vw;
+   }
+   .task summary:hover {
+      background-image: none;
+      color: initial;
+   }
+   .task summary:active {
+      background-image: linear-gradient(45deg, rgb(98, 0, 255) 66%, #fff 66%);
+   }
+   .fallback {
+      width: 80vw;
+   }
+   .top_ln, .bottom_ln {
+      width: 20vw;
+      height: 6px;
+   }
+   .tools select option {
+      font-size: 1em;
+   }
+   .entry {
+      border-radius: 30px 30px 0 0;
+      padding: 20px 0 30px 0;
+      height: 20vh;
+   }
+   .entry form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .entry input {
+      
+      width: 100%;
+      height: 30px;
+      margin: 5px 0;
+   }
+   .entry form label {
+      margin: 5px 0;
+   }
+ }
+
+ @media(max-width: 1048px) and (orientation: landscape) {
+   .entry {
+      padding: 20px 10px;
+   }
+   .entry input{
+      width: 32%;
+   }
+ }
